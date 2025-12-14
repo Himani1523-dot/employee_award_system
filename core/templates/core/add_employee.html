@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Add Employee{% endblock %}
+
+{% block content %}
+<h2 class="text-3xl font-bold mb-6">Add New Employee</h2>
+
+<form method="POST" class="bg-white p-6 shadow rounded-lg w-full max-w-xl">
+    {% csrf_token %}
+
+    <div class="mb-4">
+        <label class="block font-medium mb-1">First Name</label>
+        <input type="text" name="first_name" class="w-full border p-2 rounded">
+    </div>
+
+    <div class="mb-4">
+        <label class="block font-medium mb-1">Last Name</label>
+        <input type="text" name="last_name" class="w-full border p-2 rounded">
+    </div>
+
+    <div class="mb-4">
+        <label class="block font-medium mb-1">Email</label>
+        <input type="email" name="email" class="w-full border p-2 rounded">
+    </div>
+
+    <div class="mb-4">
+        <label class="block font-medium mb-1">Department</label>
+        <input type="text" name="department" class="w-full border p-2 rounded">
+    </div>
+
+    <div class="mb-4">
+        <label class="block font-medium mb-1">Position</label>
+        <input type="text" name="position" class="w-full border p-2 rounded">
+    </div>
+
+    <div class="mb-6">
+        <label class="block font-medium mb-1">Joining Date</label>
+        <input type="date" name="joining_date" class="w-full border p-2 rounded">
+    </div>
+
+    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+        Add Employee
+    </button>
+</form>
+
+{% endblock %}

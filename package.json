@@ -1,0 +1,12 @@
+{
+  "name": "employee-award-system",
+  "version": "1.0.0",
+  "description": "Employee Award System with Tailwind CSS",
+  "scripts": {
+    "tailwind": "tailwindcss -i ./theme/static_src/src/styles.css -o ./theme/static/css/dist/styles.css",
+    "tailwind:watch": "tailwindcss -i ./theme/static_src/src/styles.css -o ./theme/static/css/dist/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

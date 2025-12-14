@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Awards{% endblock %}
+
+{% block content %}
+
+<h2 class="text-3xl font-bold mb-6">Awards</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    {% for award in awards %}
+    <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+        
+        <h3 class="text-xl font-semibold mb-2 text-blue-700">
+            {{ award.category.title }}
+        </h3>
+
+        <p class="text-gray-700 mb-1">
+            <strong>Employee:</strong> 
+            {{ award.employee.first_name }} {{ award.employee.last_name }}
+        </p>
+
+        <p class="text-gray-700 mb-1">
+            <strong>Email:</strong> {{ award.employee.email }}
+        </p>
+
+        <p class="text-gray-700 mb-1">
+            <strong>Department:</strong> {{ award.employee.department }}
+        </p>
+
+        <p class="text-gray-700 mb-1">
+            <strong>Awarded On:</strong> {{ award.date_given }}
+        </p>
+
+    </div>
+    {% empty %}
+    <p>No awards available.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

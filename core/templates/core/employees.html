@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="text-3xl font-bold mb-6">Employees</h2>
+
+<table class="min-w-full bg-white shadow rounded-lg overflow-hidden">
+    <thead class="bg-blue-600 text-white">
+        <tr>
+            <th class="py-3 px-4 text-left">Name</th>
+            <th class="py-3 px-4 text-left">Email</th>
+            <th class="py-3 px-4 text-left">Department</th>
+            <th class="py-3 px-4 text-left">Position</th>
+            <th class="py-3 px-4 text-left">Joining Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for emp in employees %}
+        <tr class="border-b hover:bg-gray-100">
+            <td class="py-3 px-4">{{ emp.first_name }} {{ emp.last_name }}</td>
+            <td class="py-3 px-4">{{ emp.email }}</td>
+            <td class="py-3 px-4">{{ emp.department }}</td>
+            <td class="py-3 px-4">{{ emp.position }}</td>
+            <td class="py-3 px-4">{{ emp.joining_date }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5" class="text-center py-4">No employees found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

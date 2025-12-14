@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Employee Award System{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">Welcome to the Employee Award System 🎉</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <a href="{% url 'employees' %}" class="bg-white shadow p-6 rounded-lg hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold mb-2">Employees</h2>
+        <p>View all employees in the organization.</p>
+    </a>
+
+    <a href="{% url 'awards' %}" class="bg-white shadow p-6 rounded-lg hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold mb-2">Awards</h2>
+        <p>View all awards given to employees.</p>
+    </a>
+
+    <a href="{% url 'give_award' %}" class="bg-white shadow p-6 rounded-lg hover:shadow-lg transition">
+        <h2 class="text-xl font-semibold mb-2">Give Award</h2>
+        <p>Give an award to an employee.</p>
+    </a>
+
+</div>
+
+{% endblock %}

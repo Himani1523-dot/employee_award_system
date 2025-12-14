@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Employee Award System{% endblock %}</title>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}" />
+  </head>
+  <!-- ← YOU FORGOT THIS !!! -->
+
+  <body class="bg-gray-100">
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow mb-6">
+      <div class="container mx-auto p-4 flex justify-between">
+        <h1 class="text-xl font-bold">Employee Award System</h1>
+        <div class="space-x-4">
+          <a href="/" class="hover:underline">Home</a>
+          <a href="/employees/" class="hover:underline">Employees</a>
+          <a href="/awards/" class="hover:underline">Awards</a>
+          <a href="/give-award/" class="hover:underline">Give Award</a>
+          <a href="/add-employee/" class="hover:underline">Add Employee</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- FLASH MESSAGES -->
+    {% if messages %}
+    <div class="container mx-auto p-4">
+      {% for message in messages %}
+      <div
+        class="p-3 mb-3 rounded {% if message.tags == 'success' %} bg-green-200 text-green-800 {% elif message.tags == 'error' %} bg-red-200 text-red-800 {% endif %}"
+      >
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- MAIN PAGE CONTENT -->
+    <div class="container mx-auto p-6">{% block content %}{% endblock %}</div>
+  </body>
+</html>
